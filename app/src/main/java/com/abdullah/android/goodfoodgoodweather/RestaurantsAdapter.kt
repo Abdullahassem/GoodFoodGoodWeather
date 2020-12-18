@@ -30,8 +30,11 @@ class RestaurantsAdapter(val context: Context,val restaurants: List<YelpRestaura
             itemView.distance.text=restaurant.displayDistance()
             itemView.price.text=restaurant.price
 
-            Glide.with(context).load(restaurant.imageUrl).apply(RequestOptions().override(400, 400)).into(itemView.imageView)
-
+            Glide.with(context).load(restaurant.imageUrl)
+                .override(300,300)
+                .centerCrop()
+                .circleCrop()
+                .into(itemView.imageView)
         }
     }
 
