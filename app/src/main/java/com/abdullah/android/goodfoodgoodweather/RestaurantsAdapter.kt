@@ -35,6 +35,16 @@ class RestaurantsAdapter(val context: Context,val restaurants: List<YelpRestaura
                 .centerCrop()
                 .circleCrop()
                 .into(itemView.imageView)
+
+            itemView.cardView.setOnClickListener {
+                var intent = Intent (context,WeatherInfo::class.java)
+                intent.putExtra("latitude",restaurant.coordinates.latitude)
+                intent.putExtra("longitude",restaurant.coordinates.longitude)
+                intent.putExtra("location",restaurant.location.city)
+                context.startActivity(intent)
+            }
+
+
         }
     }
 
