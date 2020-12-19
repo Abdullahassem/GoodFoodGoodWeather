@@ -14,7 +14,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 private const val BASE_URL_WEATHER= "https://api.weatherapi.com/v1/"
-private const val API_KEY_WEATHER="615b2c0757484776824113744201612"
 
 
 class WeatherInfo : AppCompatActivity() {
@@ -28,7 +27,7 @@ class WeatherInfo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather_info)
 
-    location=findViewById(R.id.location)
+        location=findViewById(R.id.location)
         latitude=intent.getDoubleExtra("latitude",0.0)
         longitude=intent.getDoubleExtra("longitude",0.0)
 
@@ -41,7 +40,7 @@ class WeatherInfo : AppCompatActivity() {
         val retrofit2= Retrofit.Builder().baseUrl(BASE_URL_WEATHER).client(OkHttpClient()).addConverterFactory(GsonConverterFactory.create()).build()
         val weatherApi= retrofit2.create(WeatherApi::class.java)
 
-        var s: Call<WeatherResponse> = weatherApi.getWeather("NYC")
+        var s: Call<WeatherResponse> = weatherApi.getWeather(latlon)
 
         s.enqueue(object: Callback<WeatherResponse>{
             override fun onResponse(
