@@ -15,7 +15,8 @@ data class YelpRestaurant(
     @SerializedName("review_count") val numReviews:String,
     @SerializedName("image_url")val imageUrl:String,
     val categories:List<YelpCategory>,
-    val location:YelpLocation
+    val location:YelpLocation,
+    val coordinates: YelpCoordinates
 )
 {
     fun displayDistance():String{
@@ -31,3 +32,9 @@ data class YelpLocation(
     val city:String,
     val address:String
 )
+
+data class YelpCoordinates(
+    val longitude:Double,
+    val latitude:Double
+)
+// using yelpLocation for display purposes and using yelpCoordinates for gathering accurate weather data
