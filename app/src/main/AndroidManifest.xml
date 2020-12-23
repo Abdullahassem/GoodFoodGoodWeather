@@ -12,11 +12,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GoodFoodGoodWeather">
+        android:theme="@style/Theme.AppCompat">
+        <activity android:name=".WeatherHoursInfo"></activity>
         <activity
             android:name=".WeatherInfo"
             android:label="@string/title_activity_weather_info"
-            android:theme="@style/Theme.GoodFoodGoodWeather.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

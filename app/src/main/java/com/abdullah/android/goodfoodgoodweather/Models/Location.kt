@@ -10,3 +10,4 @@ data class Location(
     val region: String,
     val tz_id: String
 )
+
