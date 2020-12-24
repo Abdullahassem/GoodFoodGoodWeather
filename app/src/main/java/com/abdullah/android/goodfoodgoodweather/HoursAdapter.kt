@@ -12,7 +12,8 @@ class HoursAdapter(private val hoursList: ArrayList<Hour>) : RecyclerView.Adapte
     inner class HoursViewHolder(val binding: HoursWeatherInfoBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(hour: Hour) {
-            binding.temp1.text = hour.temp_c.toString()
+            binding.temp.text = hour.temp_c.toString()
+            binding.time.text=hour.time
         }
     }
 
