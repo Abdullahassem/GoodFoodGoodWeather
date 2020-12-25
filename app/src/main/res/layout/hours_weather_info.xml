@@ -5,7 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+<<<<<<< Updated upstream
     android:id="@+id/cardView">
+=======
+    android:id="@+id/cardView"
+    >
+>>>>>>> Stashed changes
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,11 +21,19 @@
 
 
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< Updated upstream
             android:layout_marginLeft="0dp"
+=======
+>>>>>>> Stashed changes
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintBottom_toTopOf="@+id/temp"
             tools:text="03:00" />
@@ -30,7 +43,10 @@
             android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             android:layout_marginLeft="0dp"
             app:layout_constraintStart_toEndOf="@id/imageView"
             app:layout_constraintBottom_toBottomOf="@id/time"

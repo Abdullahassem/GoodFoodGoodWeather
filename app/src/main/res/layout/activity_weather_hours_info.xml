@@ -6,10 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".WeatherHoursInfo">
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/hour_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
        />
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>
