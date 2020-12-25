@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val lat=intent.getDoubleExtra("longitude",0.0)
-        val lon=intent.getDoubleExtra("latitude",0.0)
+        val lon=intent.getDoubleExtra("longitude",0.0)
+        val lat=intent.getDoubleExtra("latitude",0.0)
         val restaurants= mutableListOf<YelpRestaurant>()
         val adapter=RestaurantsAdapter(this,restaurants)
         rvRestaurants.adapter=adapter
@@ -37,10 +37,16 @@ class MainActivity : AppCompatActivity() {
 
         val retrofit= Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
         val yelpApi= retrofit.create(YelpApi::class.java)
-        yelpApi.searchRestaurants("Bearer $API_KEY","food","Amsterdam").enqueue(object :Callback<YelpSearchResult>{
+        yelpApi.searchRestaurants("Bearer $API_KEY","food",lat,lon).enqueue(object :Callback<YelpSearchResult>{
+
+
+
+
+//        yelpApi.searchRestaurants("Bearer $API_KEY","food","Amsterdam").enqueue(object :Callback<YelpSearchResult>{
 
             override fun onResponse(call: Call<YelpSearchResult>, response: Response<YelpSearchResult>) {
-                Log.i(TAG,"onResponse $response")
+                Log.i(TAG,"$lat, $lon ///////")
+                Log.i(TAG,"onResponse:::: $response")
                 val body=response.body()
                 if(body==null){
                     Log.w(TAG,"did not recieve body")
