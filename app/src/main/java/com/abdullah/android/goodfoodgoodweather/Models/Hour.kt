@@ -1,5 +1,9 @@
 package com.abdullah.android.goodfoodgoodweather.Models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Hour(
     val chance_of_rain: String,
     val chance_of_snow: String,
@@ -33,4 +37,4 @@ data class Hour(
     val wind_mph: Double,
     val windchill_c: Double,
     val windchill_f: Double
-)
+) : Parcelable

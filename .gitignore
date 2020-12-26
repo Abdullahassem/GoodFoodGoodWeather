@@ -14,7 +14,3 @@
 .cxx
 local.properties
 *.png
-app/src/main/res/values/themes.xml
-app/src/main/res/values/strings.xml
-*.xml
-*.xml

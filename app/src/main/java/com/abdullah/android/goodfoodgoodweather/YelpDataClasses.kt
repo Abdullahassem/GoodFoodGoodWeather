@@ -30,7 +30,7 @@ data class YelpCategory(
 
 data class YelpLocation(
     val city:String,
-    val address:String
+    val address1:String
 )
 
 data class YelpCoordinates(
