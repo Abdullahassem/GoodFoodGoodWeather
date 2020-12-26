@@ -9,7 +9,16 @@ import retrofit2.http.Query
     fun searchRestaurants(
         @Header("Authorization") authorizationHeader:String,
         @Query("term") searchTerm:String,
-        @Query("location")location:String):Call<YelpSearchResult>
+        @Query("latitude")lat:Double,
+        @Query("longitude")lon:Double
+    ):Call<YelpSearchResult>
+//
+//
+//
+//    fun searchRestaurants(
+//        @Header("Authorization") authorizationHeader:String,
+//        @Query("term") searchTerm:String,
+//        @Query("location")location:String):Call<YelpSearchResult>
 
 }
 

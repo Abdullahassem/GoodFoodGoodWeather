@@ -5,36 +5,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-    android:id="@+id/cardView">
-=======
+    android:backgroundTint="#2E2E2E"
     android:id="@+id/cardView"
     >
->>>>>>> Stashed changes
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp"
+        >
 
 
 
 
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-            android:layout_marginLeft="0dp"
-=======
->>>>>>> Stashed changes
             app:layout_constraintStart_toEndOf="@+id/imageView"
+            android:layout_marginLeft="10dp"
             app:layout_constraintBottom_toTopOf="@+id/temp"
             tools:text="03:00" />
 
@@ -43,11 +35,8 @@
             android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< Updated upstream
+            android:layout_marginLeft="10dp"
 
-=======
->>>>>>> Stashed changes
-            android:layout_marginLeft="0dp"
             app:layout_constraintStart_toEndOf="@id/imageView"
             app:layout_constraintBottom_toBottomOf="@id/time"
             tools:text="9"/>
@@ -55,18 +44,19 @@
 
 
 
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_width="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/time"
             app:layout_constraintHorizontal_bias="0.0"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            />
 
 
 
