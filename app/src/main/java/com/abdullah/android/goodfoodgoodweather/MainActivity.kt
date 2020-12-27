@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         val lon=intent.getDoubleExtra("longitude",0.0)
         val lat=intent.getDoubleExtra("latitude",0.0)
+        val term=intent.getStringExtra("term")
         val restaurants= mutableListOf<YelpRestaurant>()
         val adapter=RestaurantsAdapter(this,restaurants)
         rvRestaurants.adapter=adapter
@@ -37,30 +38,33 @@ class MainActivity : AppCompatActivity() {
 
         val retrofit= Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
         val yelpApi= retrofit.create(YelpApi::class.java)
-        yelpApi.searchRestaurants("Bearer $API_KEY","food",lat,lon).enqueue(object :Callback<YelpSearchResult>{
+        if (term != null) {
+            yelpApi.searchRestaurants("Bearer $API_KEY",term,lat,lon).enqueue(object :Callback<YelpSearchResult>{
 
 
 
 
-//        yelpApi.searchRestaurants("Bearer $API_KEY","food","Amsterdam").enqueue(object :Callback<YelpSearchResult>{
+    //        yelpApi.searchRestaurants("Bearer $API_KEY","food","Amsterdam").enqueue(object :Callback<YelpSearchResult>{
 
-            override fun onResponse(call: Call<YelpSearchResult>, response: Response<YelpSearchResult>) {
-                Log.i(TAG,"$lat, $lon ///////")
-                Log.i(TAG,"onResponse:::: $response")
-                val body=response.body()
-                if(body==null){
-                    Log.w(TAG,"did not recieve body")
-                    return
+                override fun onResponse(call: Call<YelpSearchResult>, response: Response<YelpSearchResult>) {
+                    Log.i(TAG,"$lat, $lon ///////")
+                    Log.i(TAG,"$term -------------")
+                    Log.i(TAG,"onResponse:::: $response")
+                    val body=response.body()
+                    if(body==null){
+                        Log.w(TAG,"did not recieve body")
+                        return
+                    }
+                    restaurants.addAll(body.restaurants)
+                    adapter.notifyDataSetChanged()
                 }
-                restaurants.addAll(body.restaurants)
-                adapter.notifyDataSetChanged()
-            }
 
-            override fun onFailure(call: Call<YelpSearchResult>, t: Throwable) {
-                Log.i(TAG,"onFailure $t")
-            }
+                override fun onFailure(call: Call<YelpSearchResult>, t: Throwable) {
+                    Log.i(TAG,"onFailure $t")
+                }
 
-        })
+            })
+        }
     }
 
 }
