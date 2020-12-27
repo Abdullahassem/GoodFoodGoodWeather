@@ -47,7 +47,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     .position(latLng)
 
             )
-            var intent = Intent (this,MainActivity::class.java)
+            var intent = Intent (this,ChoiceActivity::class.java)
             intent.putExtra("latitude",latLng.latitude)
             intent.putExtra("longitude",latLng.longitude)
             this.startActivity(intent)
