@@ -13,7 +13,7 @@ interface WeatherApi {
     @GET("forecast.json?")
     fun getWeather(
         @Query("q") coordinates: String,
-        @Query("key") key: String = "615b2c0757484776824113744201612",
+        @Query("key") key: String = API_KEY_WEATHER,
         @Query("days") days:String = "3"
         ): Call<WeatherResponse>
 

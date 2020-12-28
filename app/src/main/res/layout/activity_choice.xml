@@ -7,16 +7,14 @@
     tools:context=".ChoiceActivity">
 
 
-
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:textSize="35dp"
-            android:fontFamily="sans-serif-black"
-            android:text="WHAT WOULD YOU LIKE?"/>
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="casual"
+            android:text="@string/question"
+            android:textSize="33dp" />
 
 
 
