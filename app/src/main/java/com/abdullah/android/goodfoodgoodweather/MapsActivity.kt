@@ -1,7 +1,14 @@
 package com.abdullah.android.goodfoodgoodweather
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -19,9 +26,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        if(networkCheck()){
+            val mapFragment = supportFragmentManager
+                .findFragmentById(R.id.map) as SupportMapFragment
+            mapFragment.getMapAsync(this)
+
+        }
+        else{
+            var intent = Intent (this,MainActivity::class.java)
+            this.startActivity(intent)
+        }
+
     }
 
     /**
@@ -34,24 +49,34 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap = googleMap
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(LatLng(95.0, 37.0)))
         mMap.clear()
         mMap.setOnMapLongClickListener { latLng ->
             googleMap.addMarker(
                 MarkerOptions()
                     .position(latLng)
 
+
             )
-            var intent = Intent (this,MainActivity::class.java)
+            var intent = Intent (this,ChoiceActivity::class.java)
             intent.putExtra("latitude",latLng.latitude)
             intent.putExtra("longitude",latLng.longitude)
             this.startActivity(intent)
         }
 
+    }
+
+    fun networkCheck(): Boolean {
+        val connMgr = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connMgr.activeNetworkInfo
+        //make request
+        if (networkInfo != null && networkInfo.isConnected) {
+            return true
+        } else {
+            Toast.makeText(this, "no internet", Toast.LENGTH_SHORT).show()
+            return false
+        }
     }
 }

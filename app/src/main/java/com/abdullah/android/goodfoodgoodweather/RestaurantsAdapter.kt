@@ -24,10 +24,11 @@ class RestaurantsAdapter(val context: Context,val restaurants: List<YelpRestaura
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         fun bind(restaurant: YelpRestaurant) {
 
+
             itemView.name.text=restaurant.name
-            itemView.ratingBar.rating=restaurant.rating.toFloat()
+            itemView.ratingBar.rating=restaurant.rating?.toFloat()!!
             itemView.numReviews.text="${restaurant.numReviews}"
-            itemView.address.text=restaurant.location.address1
+            itemView.address.text=restaurant.location?.address1
             itemView.category.text=restaurant.categories[0].title
             itemView.distance.text=restaurant.displayDistance()
             itemView.price.text=restaurant.price
@@ -42,9 +43,9 @@ class RestaurantsAdapter(val context: Context,val restaurants: List<YelpRestaura
 
             itemView.cardView.setOnClickListener {
                 var intent = Intent (context,WeatherInfo::class.java)
-                intent.putExtra("latitude",restaurant.coordinates.latitude)
-                intent.putExtra("longitude",restaurant.coordinates.longitude)
-                intent.putExtra("location",restaurant.location.city)
+                intent.putExtra("latitude",restaurant.coordinates?.latitude)
+                intent.putExtra("longitude",restaurant.coordinates?.longitude)
+                intent.putExtra("location",restaurant.location?.city)
                 context.startActivity(intent)
             }
 
