@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChoiceActivity">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="casual"
+            android:text="@string/choice"
+            android:textSize="26dp" />
+
+
+
+
+
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="190dp"
+            android:id="@+id/coffee"
+            app:layout_constraintEnd_toStartOf="@+id/cake"
+            app:layout_constraintTop_toTopOf="@+id/pizza"
+            android:src="@drawable/coffee"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="165dp"
+            android:id="@+id/cake"
+            app:layout_constraintStart_toEndOf="@+id/coffee"
+            app:layout_constraintTop_toTopOf="@id/pizza"
+            android:src="@drawable/cake"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="196dp"
+            android:layout_marginLeft="320dp"
+            android:id="@+id/iceCream"
+            app:layout_constraintStart_toEndOf="@+id/cake"
+            app:layout_constraintTop_toTopOf="@id/pizza"
+            android:src="@drawable/ice"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/coffee"
+            android:layout_marginTop="400dp"
+            android:src="@drawable/pizza"
+            android:id="@+id/pizza"
+            />
+
+
+
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="170dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cake"
+            app:layout_constraintStart_toEndOf="@+id/pizza"
+            android:id="@+id/burger"
+            android:src="@drawable/burger"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="320dp"
+            android:id="@+id/chicken"
+            app:layout_constraintStart_toEndOf="@+id/pizza"
+         app:layout_constraintBottom_toBottomOf="@+id/iceCream"
+            android:src="@drawable/chicken"/>
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
