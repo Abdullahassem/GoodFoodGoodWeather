@@ -22,8 +22,6 @@ class HoursAdapter(private val hoursList: ArrayList<Hour>) : RecyclerView.Adapte
                 .load("https://${hour.condition.icon}")
                 .into(binding.imageView)
 
-            // glide(itemview), https, into the image
-
 
         }
     }

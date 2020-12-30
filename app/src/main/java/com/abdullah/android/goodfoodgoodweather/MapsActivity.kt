@@ -71,7 +71,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     fun networkCheck(): Boolean {
         val connMgr = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connMgr.activeNetworkInfo
-        //make request
         if (networkInfo != null && networkInfo.isConnected) {
             return true
         } else {

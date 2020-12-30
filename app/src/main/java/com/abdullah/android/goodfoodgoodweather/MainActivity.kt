@@ -66,9 +66,6 @@ class MainActivity : AppCompatActivity() {
                             call: Call<YelpSearchResult>,
                             response: Response<YelpSearchResult>
                         ) {
-                            Log.i(TAG, "$lat, $lon ///////")
-                            Log.i(TAG, "$term -------------")
-                            Log.i(TAG, "onResponse:::: $response")
                             val body = response.body()
                             if (body == null) {
                                 Log.w(TAG, "did not recieve body")
@@ -96,7 +93,7 @@ class MainActivity : AppCompatActivity() {
     fun networkCheck(): Boolean {
         val connMgr = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connMgr.activeNetworkInfo
-        //make request
+
         if (networkInfo != null && networkInfo.isConnected) {
             return true
         } else {
