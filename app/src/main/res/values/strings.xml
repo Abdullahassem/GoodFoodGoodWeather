@@ -11,5 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_maps">Map</string>
     <string name="choice">CHOOSE WHATEVER YOU WANT..</string>
+    <string name="wow">WOW, you did not like <b>ANY</b> of those choices</string>
+    <string name="fine">FINE. here, search for whatever you want </string>
 
 </resources>

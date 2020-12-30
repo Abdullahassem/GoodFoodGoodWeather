@@ -15,6 +15,47 @@
             android:fontFamily="casual"
             android:text="@string/choice"
             android:textSize="26dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="@string/wow"
+            android:backgroundTint="#FF0000"
+            android:background="#FF0000"
+            android:textSize="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="176dp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:backgroundTint="#FF0000"
+            android:background="#FF0000"
+            android:text="@string/fine"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="500dp"
+            android:id="@+id/editText"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="570dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:layout_marginTop="620dp"
+            android:layout_marginLeft="150dp"
+            android:text="GO"
+            />
+
+
 
 
 
